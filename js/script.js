@@ -1,0 +1,1 @@
+console.log("test external Js is linked")
