@@ -37,13 +37,13 @@ function playRound(playerSelection, computerSelection) {
             return  `You Win! ${playerSelection} beats ${computerSelection}`;
 
       } else {
-            return ("Error, Please refresh the page & try again");
+            return ("Error, Please enter either Rock, Paper or Scissors & try again");
       }
 }
 
 // Play 5 rounds of the game
 function game() {
-    for (let i = 0; i < 5; i++) {
+    for (gameCount; gameCount < 5;) {
         playerSelection = prompt("ROCK, PAPER or SCISSORS?: ").toUpperCase();
         computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
