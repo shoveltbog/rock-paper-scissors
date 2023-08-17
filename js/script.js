@@ -41,6 +41,7 @@ function playRound(playerSelection, computerSelection) {
       }
 }
 
+// Play 5 rounds of the game
 function game() {
     for (let i = 0; i < 5; i++) {
         playerSelection = prompt("ROCK, PAPER or SCISSORS?: ").toUpperCase();
