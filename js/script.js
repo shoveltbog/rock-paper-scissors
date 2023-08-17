@@ -16,3 +16,27 @@ function getComputerChoice() {
     }
 }
 
+// play a round of the game
+function playRound(playerSelection, computerSelection) {
+    
+    if (playerSelection === computerSelection) {
+        gameCount++;
+        console.log('Games Played: ' + gameCount + '\n' + 'Players Score: ' + playerScore + '\n' + 'Computers Score: ' + computerScore);
+            return `You Draw! ${playerSelection} draws ${computerSelection}`;
+
+      } else if ((playerSelection === 'ROCK' && computerSelection === 'PAPER') || (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') || (playerSelection === 'SCISSORS' && computerSelection === 'ROCK')) {
+        gameCount++;
+        computerScore++;
+        console.log('Games Played: ' + gameCount + '\n' + 'Players Score: ' + playerScore + '\n' + 'Computers Score: ' + computerScore);
+            return  `You Lose! ${computerSelection} beats ${playerSelection}`;
+
+      } else if ((playerSelection ==='ROCK' && computerSelection === 'SCISSORS') || (playerSelection === 'PAPER' && computerSelection === 'ROCK') || (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')){
+        gameCount++;
+        playerScore++;
+        console.log('Games Played: ' + gameCount + '\n' + 'Players Score: ' + playerScore + '\n' + 'Computers Score: ' + computerScore);
+            return  `You Win! ${playerSelection} beats ${computerSelection}`;
+
+      } else {
+            return ("Error, Please refresh the page & try again");
+      }
+}
