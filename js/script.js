@@ -40,3 +40,13 @@ function playRound(playerSelection, computerSelection) {
             return ("Error, Please refresh the page & try again");
       }
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("ROCK, PAPER or SCISSORS?: ").toUpperCase();
+        computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+game();
