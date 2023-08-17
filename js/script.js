@@ -1,7 +1,5 @@
-function getComputerChoice() {
-    const choices = ["rock","paper","scissors"];
-    let computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(computerChoice);
-}
+// set game variables
+let playerScore = 0;
+let computerScore = 0;
+let gameCount = 0;
 
-getComputerChoice()
