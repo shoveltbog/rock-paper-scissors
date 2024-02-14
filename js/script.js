@@ -37,9 +37,16 @@ function playRound(playerSelection, computerSelection) {
         result = "Error, Please enter either Rock, Paper, or Scissors & try again";
     }
 
-    // Display result in the result div
+    // Update result & scoreboard
     updateResultDisplay(result);
     updateScoreboard();
+
+    // Check if either player or computer has reached 5 points
+    if (playerScore === 5) {
+        announceWinner("Player");
+    } else if (computerScore === 5) {
+        announceWinner("Computer");
+    }
 }
         
 // buttons
@@ -99,3 +106,17 @@ scissorsButton.addEventListener('click', () => {
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
 });
+
+// Function to announce winner & end game
+function announceWinner(winner) {
+    const winnerMessage = `${winner} wins the game!`;
+    const winnerParagrapgh = document.createElement('p');
+    winnerParagrapgh.textContent = winnerMessage;
+    resultDiv.appendChild(winnerParagrapgh);
+
+    // Disable buttons
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+}
+
