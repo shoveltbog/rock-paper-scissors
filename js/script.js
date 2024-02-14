@@ -1,3 +1,6 @@
+// branch rps-ui code
+
+
 // set game variables
 let playerScore = 0;
 let computerScore = 0;
@@ -42,12 +45,45 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Play 5 rounds of the game
-function game() {
-    for (gameCount; gameCount < 5;) {
-        playerSelection = prompt("ROCK, PAPER or SCISSORS?: ").toUpperCase();
-        computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-}
+// function game() {
+//     for (gameCount; gameCount < 5;) {
+//         playerSelection = prompt("ROCK, PAPER or SCISSORS?: ").toUpperCase();
+//         computerSelection = getComputerChoice();
+//         console.log(playRound(playerSelection, computerSelection));
+//     }
+// }
 
-game();
+// buttons
+const buttonContainer = document.querySelector('body');
+
+const rockButton = document.createElement('button');
+rockButton.innerText = "ROCK";
+buttonContainer.appendChild(rockButton);
+
+rockButton.addEventListener('click', () => {
+    const playerSelection = "ROCK";
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection)); 
+});
+
+const paperButton = document.createElement('button');
+paperButton.innerText = "PAPER";
+buttonContainer.appendChild(paperButton);
+
+paperButton.addEventListener('click', () => {
+    const playerSelection = "PAPER";
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection)); 
+});
+
+const scissorsButton = document.createElement('button');
+scissorsButton.innerText = "SCISSORS";
+buttonContainer.appendChild(scissorsButton);
+
+scissorsButton.addEventListener('click', () => {
+    const playerSelection = "SCISSORS";
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection)); 
+});
+
+// game();
